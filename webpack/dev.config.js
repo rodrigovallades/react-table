@@ -55,11 +55,6 @@ module.exports = webpackMerge(webpackCommon, {
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),
     new DefinePlugin({
       'process.env': {
         NODE_ENV: "'development'"
@@ -67,7 +62,7 @@ module.exports = webpackMerge(webpackCommon, {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, '../static/index.html')      
+      template: path.resolve(__dirname, '../static/index.html')
     }),
     new HotModuleReplacementPlugin()
   ],
