@@ -1,6 +1,6 @@
-import * as styles from './App.scss';
+import './App.scss';
 import $ from 'jquery';
-import dt from 'datatables.net';
+import dt from 'datatables.net-bs4';
 
 export class App {
 
@@ -14,8 +14,8 @@ export class App {
     if (info) {
 
       const table = $('#people').DataTable({
-        data: info,
-        columns: [
+        'data': info,
+        'columns': [
           {title: 'E-mail'},
           {title: 'First name'},
           {title: 'Last name'},
@@ -23,10 +23,10 @@ export class App {
           {title: 'Phone number'},
           {title: 'Hours studied'}
         ],
-        'initComplete'() {
+        initComplete: function() {
           $('#people thead th').each(function() {
             const title = $(this).text().toLowerCase();
-            $(this).append(`<div class='header__search'><input type='text' placeholder='Search ${title}'/></div>`);
+            $(this).append(`<div class='header__search'><input type='text' class='form-control form-control-sm' placeholder='Search ${title}'/></div>`);
           });
         }
       });

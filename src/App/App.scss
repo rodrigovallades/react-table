@@ -1,16 +1,9 @@
-.table {
-  box-shadow: #000 0 0 3px;
-  padding: 20px;
-  width: 100%;
-
-  thead {
-    text-align: left;
-    font-size: 1.2em;
-    font-weight: 800;
-  }
-
-  tbody td {
-    padding: 3px;
-    text-align: left;
-  }
+#app table.dataTable {
+  border-collapse: collapse!important;
+}
+#people_wrapper {
+  margin-top: 20px;
+}
+#people tbody td {
+  font-size: 0.9rem;
 }
