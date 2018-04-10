@@ -1,4 +1,5 @@
 import { App } from './App';
+import 'datatables.net-dt/css/jquery.dataTables.css';
 
 function main() {
 
