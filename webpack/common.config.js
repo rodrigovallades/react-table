@@ -9,7 +9,7 @@ module.exports = {
     'vendor': './src/vendor.js'
   },
   resolve: {
-    extensions: ['.js', '.scss'],
+    extensions: ['.js', '.scss', '.css'],
     modules: ['node_modules']
   },
   module: {
@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
-        loader: 'file',
+        loader: 'file-loader',
       },
       {
         test: /\.(mp4|webm)$/,
