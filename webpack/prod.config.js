@@ -24,6 +24,15 @@ module.exports = webpackMerge(webpackCommon, {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader'
+          }
+        ]
+      }, {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -31,11 +40,9 @@ module.exports = webpackMerge(webpackCommon, {
             {
               loader: 'css-loader',
               options: {
-                modules: true,
                 minimize: true,
                 sourceMap: true,
-                importLoaders: 2,
-                localIdentName: '[name]__[local]'
+                importLoaders: 2
               }
             },
             {
@@ -64,7 +71,7 @@ module.exports = webpackMerge(webpackCommon, {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, '../static/index.html')
+      template: path.resolve(__dirname, '../static/index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
