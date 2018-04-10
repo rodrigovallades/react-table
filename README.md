@@ -23,10 +23,15 @@ email(something@somewhere.com), first name(joe), last name(smith jr), primary gr
 - [x] Bootstrap 4
 - [x] DataTables.js
 
-## Development setup
+## Development build
 
 1. **npm install**
 3. **npm start**
+
+## Production build
+
+1. **npm install**
+3. **npm run build**
 
 Thank you,
 Rodrigo
