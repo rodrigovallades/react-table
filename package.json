@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack/dev.config.js --watch --open",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,36 @@
   "bugs": {
     "url": "https://github.com/rodrigovallades/table-search-sort/issues"
   },
-  "homepage": "https://github.com/rodrigovallades/table-search-sort#readme"
+  "homepage": "https://github.com/rodrigovallades/table-search-sort#readme",
+  "dependencies": {
+      "babel-polyfill": "^6.23.0",
+      "datatables.net": "^1.10.16",
+      "datatables.net-dt": "^1.10.16",
+      "jquery": "^3.3.1"
+    },
+    "devDependencies": {
+      "autoprefixer": "^7.1.2",
+      "babel-core": "^6.25.0",
+      "babel-eslint": "^7.2.3",
+      "babel-loader": "^7.1.1",
+      "babel-plugin-transform-class-properties": "^6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.23.0",
+      "babel-preset-env": "^1.6.0",
+      "clean-webpack-plugin": "^0.1.16",
+      "copy-webpack-plugin": "^4.0.1",
+      "cross-env": "^5.0.1",
+      "css-loader": "^0.28.11",
+      "extract-text-webpack-plugin": "^2.1.2",
+      "file-loader": "^0.11.2",
+      "html-webpack-plugin": "^2.29.0",
+      "json-loader": "^0.5.4",
+      "node-sass": "^4.5.3",
+      "postcss-loader": "^2.0.6",
+      "sass-loader": "^6.0.6",
+      "style-loader": "^0.18.2",
+      "url-loader": "^0.5.9",
+      "webpack": "^3.1.0",
+      "webpack-dev-server": "^2.5.1",
+      "webpack-merge": "^4.1.0"
+    }
 }
