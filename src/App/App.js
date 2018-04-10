@@ -6,15 +6,15 @@ export class App {
 
   constructor(options) {
     this.props = {
-      dom: null
+      people: [],
+      ...options
     };
   }
 
-  render(info) {
-    if (info) {
-
+  render() {
+    if (this.props.people.length) {
       const table = $('#people').DataTable({
-        'data': info,
+        'data': this.props.people,
         'columns': [
           {title: 'E-mail'},
           {title: 'First name'},
