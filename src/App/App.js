@@ -45,6 +45,9 @@ export class App {
             e.stopPropagation();
           });
       });
+
+      return table;
     }
+    return null;
   }
 }
