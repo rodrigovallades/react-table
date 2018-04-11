@@ -14,11 +14,9 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
 module.exports = webpackMerge(webpackCommon, {
   bail: true,
-  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name]-[hash].min.js',
-    sourceMapFilename: '[name]-[hash].map',
     chunkFilename: '[id]-[chunkhash].js'
   },
   module: {
@@ -41,7 +39,7 @@ module.exports = webpackMerge(webpackCommon, {
               loader: 'css-loader',
               options: {
                 minimize: true,
-                sourceMap: true,
+                sourceMap: false,
                 importLoaders: 2
               }
             },
@@ -58,8 +56,7 @@ module.exports = webpackMerge(webpackCommon, {
               loader: 'sass-loader',
               options: {
                 outputStyle: 'expanded',
-                sourceMap: true,
-                sourceMapContents: true
+                sourceMap: false                
               }
             }
           ]
@@ -96,7 +93,7 @@ module.exports = webpackMerge(webpackCommon, {
     }),
     new DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
+        NODE_ENV: 'production'
       }
     }),
     new ExtractTextPlugin('[name]-[chunkhash].min.css'),
@@ -112,7 +109,7 @@ module.exports = webpackMerge(webpackCommon, {
         comments: false,
         screw_ie8: true
       },
-      sourceMap: true
+      sourceMap: false
     }),
     new LoaderOptionsPlugin({
       options: {
