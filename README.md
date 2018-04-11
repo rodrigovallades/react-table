@@ -23,15 +23,20 @@ email(something@somewhere.com), first name(joe), last name(smith jr), primary gr
 - [x] Bootstrap 4
 - [x] DataTables.js
 
+## Running tests with Mocha + Chai
+
+1. **npm test** (run tests once)
+2. **npm run test:tdd** (keep mocha watching for tests)
+
 ## Development build
 
 1. **npm install**
-3. **npm start**
+2. **npm start**
 
 ## Production build
 
 1. **npm install**
-3. **npm run build**
+2. **npm run build**
 
 Thank you,
 Rodrigo
